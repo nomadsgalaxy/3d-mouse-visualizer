@@ -1,0 +1,19 @@
+[package]
+name = "mouse3d-visualizer"
+version = "0.1.0"
+edition = "2024"
+description = "Pictures of a 3D mouse (a spring-back cap or a trackball) for egui, moving as the device does"
+license = "MIT"
+repository = "https://github.com/nomadsgalaxy/3d-mouse-visualizer"
+keywords = ["egui", "3d-mouse", "trackball", "visualization"]
+categories = ["gui", "visualization"]
+
+[features]
+default = ["device"]
+# Read a HID multi-axis controller live in the demo (Linux, hidraw).
+device = ["dep:solidcraft-space-mouse"]
+
+[dependencies]
+egui = "0.36"
+eframe = "0.36"
+solidcraft-space-mouse = { git = "https://github.com/tangency-labs/solidcraft", optional = true }
